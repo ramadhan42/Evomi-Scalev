@@ -1,0 +1,3039 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+
+    <!--  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO -->
+    <title>EVOMI — Flash Sale Eau de Parfum | Every Version of Me</title>
+
+    <!--  -->
+    <meta
+      name="description"
+      content="Flash Sale EVOMI Eau de Parfum 50 ml hanya Rp165K. 4 versi aroma (Purpose Prestige, Peaceful Calm, Rebel Brave, Sweet Shy), tahan 8+ jam, gratis ongkir, free sampel 2 ml."
+    />
+
+    <!-- Fonts: Nohemi (lokal, lihat @font-face di bawah) + DM Sans (kartu testimoni, sesuai Figma) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- DM Sans for testimonial cards (as per Figma) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Nohemi — font utama semua section (Regular, SemiBold, Bold) */
+      @font-face {
+        font-family: "Nohemi";
+        src: url("https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/fonts/Nohemi-Regular.otf")
+          format("opentype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Nohemi";
+        src: url("https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/fonts/Nohemi-SemiBold.otf")
+          format("opentype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Nohemi";
+        src: url("https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/fonts/Nohemi-Bold.otf")
+          format("opentype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* ============================================================
+         ROOT VARIABLES — warna diambil dari desain Figma Frame 194
+         ============================================================ */
+      :root {
+        --blue: #0b7be3; /* Latar utama hero & section testimoni */
+        --blue-deep: #0077cf; /* Kartu fitur (EDP Long Lasting, dst) */
+        --blue-text: #0f6fd6; /* Judul section biru */
+        --blue-bright: #0a8dff; /* Header kartu harga */
+        --blue-card: #1a7ce8; /* Kartu aroma Purpose Prestige */
+        --green: #22b14c; /* Badge hijau (Hemat, Mix Varian) */
+        --green-card: #5bbd4a; /* Kartu aroma Peaceful Calm */
+        --red-card: #f05a4a; /* Kartu aroma Rebel Brave */
+        --pink-card: #ef7ac2; /* Kartu aroma Sweet Shy */
+        --cream: #fff6e5; /* Badan kartu harga */
+        --ink: #1f1f1f; /* Warna teks utama */
+        --muted: #6b7280; /* Warna teks sekunder */
+        --star: #ffb800; /* Warna bintang testimoni */
+        --max: 1280px; /* Lebar frame Figma */
+        --radius: 24px; /* Radius border kartu & tombol */
+        --font-body:
+          "Nohemi", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* Semua teks kecuali judul section biru, kartu testimoni, dan logo */
+        --font-display:
+          "Nohemi", system-ui, sans-serif; /* Judul section biru */
+        --font-logo: "Nohemi", system-ui, sans-serif; /* Logo */
+      }
+
+      * {
+        box-sizing: border-box; /* border-box supaya padding tidak menambah lebar elemen */
+      }
+      html {
+        scroll-behavior: smooth; /* scroll halus untuk anchor link */
+      }
+      body {
+        margin: 0; /* hilangkan margin default browser */
+        font-family: var(--font-body); /* font utama semua section */
+        font-size: 16px; /* ukuran font dasar 16px */
+        line-height: 1.5; /* jarak antar baris 1.5x ukuran font */
+        color: var(--ink); /* warna teks utama */
+        background: #fff; /* warna latar belakang putih */
+        -webkit-font-smoothing: antialiased; /* font lebih halus di browser WebKit (Chrome, Safari) */
+      }
+      img,
+      svg {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .container {
+        width: 100%;
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      @media (min-width: 1024px) {
+        .container {
+          padding: 0 60px;
+        }
+      }
+      @media (max-width: 599px) {
+        .container {
+          padding: 0 16px; /* HP: gutter lebih kecil agar kartu 2 kolom lega */
+        }
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      /* Judul section biru */
+      .section-title {
+        font-weight: 700;
+        font-size: clamp(1.7rem, 3.8vw, 48.6834px); /* Figma: 48.68px / 51px */
+        line-height: 1.05;
+        color: #0077cf;
+        text-align: center;
+      }
+
+      /* ============================================================
+         MARQUEE — "Every Version of Me" berjalan
+         ============================================================ */
+      .marquee {
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 14px 0;
+      }
+      .marquee-track {
+        /* Jarak antar item memakai margin-right (bukan gap) supaya setiap
+           salinan punya jarak di ujungnya juga: lebar track = tepat 2x
+           setengahnya, sehingga translateX(-50%) menyambung tanpa patahan. */
+        --marquee-gap: 28px;
+        display: flex;
+        width: max-content;
+        align-items: center;
+        animation: marquee 28s linear infinite;
+        will-change: transform;
+        backface-visibility: hidden;
+      }
+      .marquee-track > * {
+        flex-shrink: 0;
+        margin-right: var(--marquee-gap);
+      }
+      .marquee-track span {
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+      .marquee-track svg {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+      }
+      .marquee--light {
+        color: #fff;
+        background: var(--blue);
+      }
+      .marquee--grey {
+        color: #d4d7dd;
+        background: #fff;
+        padding: 56px 0 26px; /* jarak atas lebih renggang dari kartu aroma */
+      }
+      .marquee--grey {
+        color: #d2d2d2;
+      }
+      .marquee--grey .marquee-track span {
+        font-size: 20.9353px; /* Figma */
+        line-height: 22px;
+        font-weight: 600;
+      }
+      @keyframes marquee {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .marquee-track {
+          animation: none;
+        }
+      }
+
+      /* ============================================================
+         HERO — FLASH SALE
+         Semua ukuran memakai satuan --u = 1px pada desain 1500px
+         (hero-section-scalev.PNG), jadi proporsi tetap sama di layar lain.
+         ============================================================ */
+      .hero {
+        --u: min(1px, calc(100vw / 1500));
+        --hero-blue: #0277d2;
+        --price-blue: #0a6fd2;
+        --save-green: #12c213;
+        background: var(--hero-blue);
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-stage {
+        position: relative;
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 calc(110 * var(--u));
+        min-height: calc(710 * var(--u));
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: calc(52 * var(--u));
+        position: relative;
+        z-index: 2;
+      }
+      .logo {
+        display: block;
+        line-height: 0;
+      }
+      /* Logo gambar (evomi.png, 100x34): tinggi mengikuti ukuran logo teks
+         sebelumnya; lebar menyesuaikan rasio asli */
+      .logo img {
+        display: block;
+        height: calc(37.08 * var(--u)); /* 36 + 3% */
+        width: auto;
+      }
+      .tagline {
+        font-weight: 600;
+        font-size: calc(25.27 * var(--u)); /* Figma 20.94px @1280, +3% */
+        line-height: 1.05;
+      }
+
+      /* Kolom kiri: judul, harga, benefit — lebar desain 618px */
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+        width: calc(618 * var(--u));
+        padding: calc(102 * var(--u)) 0 calc(118 * var(--u));
+      }
+      .flash-title {
+        position: relative;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: calc(104.08 * var(--u)); /* Figma 88.82px @1280 */
+        line-height: 1;
+        white-space: nowrap;
+        width: max-content;
+        /* putih dengan bayangan biru muda di bagian bawah huruf */
+        color: #fff;
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #ffffff 55%,
+          #d9e7f7 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 calc(3 * var(--u)) 0 #c6d9ef)
+          drop-shadow(
+            0 calc(8 * var(--u)) calc(14 * var(--u)) rgba(0, 45, 120, 0.35)
+          );
+      }
+      .flash-title .bolt {
+        position: absolute;
+        width: calc(62 * var(--u));
+        height: auto;
+        left: calc(100% + 14 * var(--u));
+        top: calc(-38 * var(--u));
+        transform: rotate(8deg);
+        filter: drop-shadow(
+          0 calc(4 * var(--u)) calc(6 * var(--u)) rgba(0, 40, 110, 0.3)
+        );
+      }
+
+      .price-row {
+        display: grid;
+        grid-template-columns: 353fr 246fr;
+        gap: calc(19 * var(--u));
+        margin-top: calc(44 * var(--u));
+      }
+      .price-box,
+      .save-box {
+        border-radius: calc(18 * var(--u));
+        height: calc(170 * var(--u));
+      }
+      .price-box {
+        background: #fff;
+        color: var(--price-blue);
+        padding: calc(20 * var(--u)) calc(26 * var(--u)) 0;
+        box-shadow:
+          inset 0 0 calc(16 * var(--u)) rgba(2, 119, 210, 0.28),
+          0 0 calc(12 * var(--u)) rgba(255, 255, 255, 0.55),
+          0 calc(10 * var(--u)) calc(26 * var(--u)) rgba(0, 40, 110, 0.28);
+      }
+      .price-box .old {
+        position: relative;
+        display: inline-block;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: calc(27.76 * var(--u)); /* Figma 23.69px */
+        line-height: 1.1;
+        color: #ababab;
+      }
+      .price-box .old::after {
+        /* coretan merah miring seperti di desain */
+        content: "";
+        position: absolute;
+        left: -2%;
+        right: -2%;
+        top: 52%;
+        height: calc(3 * var(--u));
+        border-radius: 99px;
+        background: #e8375d;
+        transform: rotate(-2deg);
+      }
+      .price-box .now {
+        display: flex;
+        align-items: flex-start;
+        gap: calc(6 * var(--u));
+        font-family: var(--font-display);
+        font-weight: 700;
+        line-height: 1;
+        margin-top: calc(6 * var(--u));
+      }
+      .price-box .now small {
+        font-size: calc(43.9 * var(--u)); /* Figma 37.46px */
+        letter-spacing: 0.01em;
+        margin-top: calc(10 * var(--u));
+      }
+      .price-box .now b {
+        font-weight: 700;
+        font-size: calc(91.46 * var(--u)); /* Figma 78.04px */
+        line-height: 0.9;
+        letter-spacing: 0.01em;
+      }
+      .save-box {
+        background: var(--save-green);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1;
+        box-shadow:
+          inset 0 0 calc(16 * var(--u)) rgba(255, 255, 255, 0.25),
+          0 calc(10 * var(--u)) calc(26 * var(--u)) rgba(0, 40, 110, 0.28);
+      }
+      .save-box span {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: calc(33.79 * var(--u)); /* Figma 28.83px */
+      }
+      .save-box b {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: calc(56.31 * var(--u)); /* Figma 48.05px */
+        margin-top: calc(10 * var(--u));
+      }
+
+      /* Benefit (Gratis Ongkir, Free Sampel) */
+      .perks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 22px;
+      }
+      .perk {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff;
+        color: var(--blue-text);
+        border-radius: 14px;
+        padding: 10px 18px 10px 14px;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.1;
+        min-width: 220px;
+        box-shadow: 0 10px 24px rgba(0, 40, 100, 0.2);
+      }
+      .perk img.truck {
+        width: 66px;
+        height: auto;
+      }
+      .perk .samples {
+        display: block;
+        flex-shrink: 0;
+        width: 74px;
+        height: 54px;
+        position: relative;
+      }
+      .perk .samples img {
+        position: absolute;
+        bottom: -6px;
+        width: auto;
+        max-width: none;
+        height: 66px;
+        transform-origin: bottom center;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.18));
+      }
+      .perk .samples img:nth-child(1) {
+        left: 4px;
+        transform: rotate(-22deg);
+      }
+      .perk .samples img:nth-child(2) {
+        left: 20px;
+        transform: rotate(-9deg);
+      }
+      .perk .samples img:nth-child(3) {
+        left: 36px;
+        transform: rotate(4deg);
+      }
+      .perk .samples img:nth-child(4) {
+        left: 52px;
+        transform: rotate(18deg);
+      }
+
+      /* Versi hero — mengikuti ukuran desain */
+      .hero .perks {
+        display: grid;
+        grid-template-columns: 299fr 298fr;
+        gap: calc(17 * var(--u));
+        margin-top: calc(27 * var(--u));
+      }
+      .hero .perk {
+        min-width: 0;
+        height: calc(75 * var(--u));
+        gap: calc(16 * var(--u));
+        padding: 0 calc(16 * var(--u)) 0 calc(18 * var(--u));
+        border-radius: calc(14 * var(--u));
+        font-weight: 700;
+        font-size: calc(21.03 * var(--u)); /* Figma 17.94px */
+        line-height: 1;
+        color: #1172ba;
+        box-shadow: 0 calc(8 * var(--u)) calc(20 * var(--u))
+          rgba(0, 40, 110, 0.22);
+      }
+      .hero .perk img.truck {
+        width: calc(80 * var(--u));
+      }
+      .hero .perk .samples {
+        width: calc(112 * var(--u));
+        height: calc(75 * var(--u));
+      }
+      .hero .perk .samples img {
+        height: calc(90 * var(--u));
+        bottom: calc(-12 * var(--u));
+      }
+      .hero .perk .samples img:nth-child(1) {
+        left: calc(10 * var(--u));
+      }
+      .hero .perk .samples img:nth-child(2) {
+        left: calc(32 * var(--u));
+      }
+      .hero .perk .samples img:nth-child(3) {
+        left: calc(54 * var(--u));
+      }
+      .hero .perk .samples img:nth-child(4) {
+        left: calc(76 * var(--u));
+      }
+
+      /* Visual kanan — produk rata kanan sampai tepi layar, menempel ke marquee.
+         Desain @1500px: kotak gambar 662 x 493 px. */
+      .hero-visual {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: calc(662 * var(--u));
+        z-index: 0;
+      }
+      @media (min-width: 1501px) {
+        .hero-visual {
+          /* layar lebar: tetap menempel tepi kanan konten 1500px */
+          right: calc((100vw - 1500px) / -2);
+        }
+      }
+      .hero-visual .product {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1179 / 878; /* rasio asli produk.png */
+      }
+      .hero-visual .product-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: right bottom;
+      }
+
+      /* Ikon mengambang — persentase relatif terhadap kotak gambar produk.
+         `left` = titik tengah tutup botol masing-masing (diukur dari produk.png
+         1179 x 878), lalu digeser -50% agar ikon tepat di tengah atas tutupnya. */
+      .shape {
+        position: absolute;
+        z-index: 3;
+        pointer-events: none;
+        translate: -50% 0;
+        animation: float 5s ease-in-out infinite;
+      }
+      .shape img {
+        display: block;
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(
+          0 calc(4 * var(--u)) calc(6 * var(--u)) rgba(0, 40, 110, 0.25)
+        );
+      }
+      .shape--rebel {
+        /* segitiga merah — di atas tutup merah */
+        width: 6.6%;
+        left: 26.3%;
+        top: 4.5%;
+        animation-delay: -1s;
+      }
+      .shape--sweet {
+        /* hati pink — di atas tutup pink */
+        width: 7.2%;
+        left: 47.6%;
+        top: -13.5%;
+        animation-delay: -2s;
+      }
+      .shape--purpose {
+        /* bintang biru — di atas tutup biru */
+        width: 6%;
+        left: 60.8%;
+        top: 21.5%;
+        animation-delay: -3s;
+      }
+      .shape--peaceful {
+        /* elips hijau — di atas tutup hijau */
+        width: 6.6%;
+        left: 81.5%;
+        top: 4.5%;
+        animation-delay: -1.5s;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .shape {
+          animation: none;
+        }
+      }
+
+      /* Marquee hero */
+      .hero .marquee {
+        position: relative;
+        z-index: 2;
+        padding: calc(26 * var(--u)) 0;
+        background: var(--hero-blue);
+      }
+      .hero .marquee-track {
+        --marquee-gap: calc(30 * var(--u));
+      }
+      .hero .marquee-track span {
+        font-size: max(15px, calc(24.53 * var(--u))); /* Figma 20.94px */
+        font-weight: 600;
+        line-height: 1.05;
+      }
+      .hero .marquee-track svg {
+        width: max(20px, calc(34 * var(--u)));
+        height: max(20px, calc(34 * var(--u)));
+      }
+
+      /* Mobile & tablet kecil: susun vertikal, kolom kiri selebar layar */
+      @media (max-width: 899px) {
+        .hero {
+          /* 618px kolom + ruang untuk ikon petir di kanan judul */
+          --u: min(1.1px, calc((100vw - 32px) / 690));
+        }
+        .hero-stage {
+          padding: 0 16px;
+          min-height: 0;
+        }
+        .topbar {
+          padding-top: 20px;
+        }
+        .logo img {
+          height: 26.8px; /* 26 + 3% */
+        }
+        .tagline {
+          font-size: 14.4px; /* 14 + 3% */
+        }
+        .hero-copy {
+          width: 100%;
+          max-width: calc(618 * var(--u));
+          margin: 0;
+          padding: calc(64 * var(--u)) 0 0;
+        }
+        /* Judul FLASH SALE & ikon petir diperkecil agar pas di layar HP */
+        .flash-title {
+          font-size: calc(82 * var(--u));
+        }
+        .flash-title .bolt {
+          width: calc(48 * var(--u));
+          left: calc(100% + 10 * var(--u));
+          top: calc(-28 * var(--u));
+        }
+        /* Produk selebar layar (tepi ke tepi) agar podium tidak terpotong
+           di tengah; margin atas memberi ruang untuk ikon hati yang melayang. */
+        .hero-visual {
+          position: relative;
+          width: calc(100% + 32px);
+          max-width: none;
+          margin: calc(20px + 12vw) -16px 0;
+          padding-top: 0;
+        }
+        @media (min-width: 600px) {
+          .hero-visual {
+            width: 100%;
+            max-width: 662px;
+            margin: 120px -16px 0 auto;
+          }
+        }
+        .hero .marquee {
+          padding: 14px 0;
+        }
+      }
+
+      /* ============================================================
+         FITUR — 4 kartu biru
+         ============================================================ */
+      .features {
+        padding: 36px 0 0;
+      }
+      .feature-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (min-width: 900px) {
+        .feature-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .feature {
+        background: var(--blue-deep);
+        color: #fff;
+        border-radius: 20px;
+        padding: 20px 18px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 8px 20px rgba(18, 100, 196, 0.25);
+      }
+      .feature svg,
+      .feature .feature-icon {
+        width: 52px;
+        height: 52px;
+        flex-shrink: 0;
+      }
+      /* Ikon PNG (assets/section 2): kotak tetap 52px, gambar diposisikan
+         di tengah tanpa diregangkan */
+      .feature .feature-icon {
+        object-fit: contain;
+        object-position: center;
+      }
+      .feature b {
+        display: block;
+        font-weight: 700;
+        font-size: clamp(1rem, 1.48vw, 18.9515px); /* Figma 18.95px / 28px */
+        line-height: 1.48;
+      }
+      .feature span {
+        font-weight: 400;
+        font-size: clamp(0.9rem, 1.37vw, 17.4775px); /* Figma 17.48px / 26px */
+        line-height: 1.49;
+      }
+      @media (max-width: 520px) {
+        .feature {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 16px;
+        }
+        .feature svg,
+        .feature .feature-icon {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      /* ============================================================
+         AROMA — Celebration for Every Version of You
+         ============================================================ */
+      .aroma {
+        padding: 44px 0 10px;
+      }
+      .aroma-grid {
+        display: grid;
+        gap: 22px;
+        margin-top: 30px;
+      }
+      /* Mobile & tablet (<900px): 2 kartu per baris; isi kartu disusun
+         vertikal (lihat blok @media di bawah) */
+      @media (max-width: 899px) {
+        .aroma-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 14px;
+          margin-top: 24px;
+        }
+      }
+      @media (min-width: 1180px) {
+        .aroma-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      /* Tiap kartu: panel kiri lebih gelap (botol), panel kanan lebih terang (notes) */
+      .aroma-card {
+        --c-dark: var(--blue-card);
+        --c-light: var(--blue-card);
+        --c-deco: rgba(255, 255, 255, 0.35);
+        border-radius: 22px;
+        color: #fff;
+        display: grid;
+        grid-template-columns: 37.46% 1fr; /* Figma: panel kiri 213.67 / 570.43 */
+        min-height: 320.95px;
+        overflow: hidden;
+        position: relative;
+        background: var(--c-light);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .aroma-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 40px rgba(0, 0, 0, 0.16);
+      }
+      .aroma-card--blue {
+        --c-dark: #0077cf;
+        --c-light: #0a86e6;
+        --c-deco: #33a9ff;
+      }
+      .aroma-card--green {
+        --c-dark: #41a93b;
+        --c-light: #74c95e;
+        --c-deco: #8fdd77;
+      }
+      .aroma-card--red {
+        --c-dark: #e33d35;
+        --c-light: #f1645d;
+        --c-deco: #ff8a84;
+      }
+      .aroma-card--pink {
+        --c-dark: #dd74a5;
+        --c-light: #f18fbd;
+        --c-deco: #f9a3cc;
+      }
+      .aroma-card .deco {
+        position: absolute;
+        top: -18px;
+        left: -18px;
+        width: 78px;
+        height: 78px;
+        z-index: 1;
+      }
+      .aroma-card .deco * {
+        fill: var(--c-deco);
+        opacity: 1;
+      }
+      .aroma-left {
+        position: relative;
+        background: var(--c-dark);
+        padding: 34px 12px 0;
+        overflow: hidden;
+      }
+      .aroma-left h3 {
+        position: relative;
+        z-index: 2;
+        font-weight: 600;
+        font-size: 17.8304px; /* Figma */
+        line-height: 1.17;
+        text-align: center;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      }
+      /* Semua botol memakai ukuran sama (gambar sumber 526×829) dan terpotong di bawah seperti desain */
+      .aroma-left img {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 74%;
+        max-width: 170px;
+        aspect-ratio: 526 / 829;
+        object-fit: contain;
+        transform: translate(-50%, 14%);
+        filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.22));
+        transition: transform 0.45s ease;
+      }
+      .aroma-card:hover .aroma-left img {
+        transform: translate(-50%, 10%);
+      }
+      /* Posisi mengikuti Figma: label di x+33, lingkaran notes di x+108,
+         jarak baris 72.2px, jarak kolom 53.25px */
+      .aroma-right {
+        padding: 39.52px 18px 28.95px 32.98px;
+        display: flex;
+        flex-direction: column;
+        gap: 17.63px;
+        min-width: 0;
+      }
+      .note-row {
+        display: grid;
+        grid-template-columns: 74.89px 1fr;
+        align-items: start;
+        gap: 0;
+      }
+      @media (min-width: 561px) {
+        .note-row {
+          height: 54.59px; /* tinggi grup notes di Figma; nama 2 baris boleh meluber */
+        }
+      }
+      .note-label {
+        justify-self: start;
+        width: max-content;
+        background: #fff;
+        color: inherit;
+        border-radius: 2.37739px;
+        font-size: 7.73633px; /* Figma */
+        line-height: 1.17;
+        font-weight: 600;
+        padding: 2.97174px;
+        text-align: center;
+        margin-top: 11.9px; /* label (14.94px) sejajar tengah lingkaran (38.75px) */
+        white-space: nowrap;
+      }
+      .aroma-card .note-label {
+        color: var(--c-dark);
+      }
+      .note-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 17.63px 14.5px;
+      }
+      .note-item {
+        width: 38.75px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 7.89875px; /* Figma */
+        line-height: 1.17;
+        font-weight: 500;
+      }
+      .note-item img {
+        width: 38.75px;
+        height: 38.75px;
+        flex: none;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1.95723px solid #fff;
+        margin: 0 0 6.84px;
+        background: #fff;
+      }
+      .spec-row {
+        display: grid;
+        grid-template-columns: 74.89px 1fr;
+        gap: 0;
+        margin-top: auto;
+        align-items: start;
+        padding-top: 4.75px;
+      }
+      .spec-row .spec-caption {
+        font-size: 5.94348px; /* Figma */
+        line-height: 1.5;
+        font-weight: 500;
+        width: 42px;
+        margin-top: -4.75px; /* caption 4.75px lebih tinggi dari label spec */
+      }
+      .spec-items {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: start;
+        gap: 6px 14px;
+      }
+      .spec {
+        text-align: left;
+        font-size: 5.94348px; /* Figma */
+        line-height: 1.17;
+        font-weight: 500;
+      }
+      .spec .note-label {
+        margin: 0 0 6.26px;
+        display: inline-block;
+        font-size: 5.94348px;
+        padding: 3.47619px;
+        border-radius: 1.95536px;
+      }
+      .spec .note-label + div {
+        line-height: 1.17;
+      }
+      /* Mobile & tablet (<900px): kartu 2 kolom dibuat padat menyerupai kotak —
+         panel botol pendek di atas, notes 4 per baris, spesifikasi satu strip
+         ringkas di bawah notes. Ukuran teks dijaga minimal ±7px agar terbaca. */
+      @media (max-width: 899px) {
+        .aroma-card {
+          grid-template-columns: 1fr;
+          min-height: 0;
+          border-radius: 18px;
+        }
+        .aroma-card .deco {
+          width: 44px;
+          height: 44px;
+          top: -12px;
+          left: -12px;
+        }
+        /* Panel atas pendek: judul di kanan atas, botol kecil di kiri */
+        .aroma-left {
+          min-height: 122px;
+          padding: 13px 14px 0 10px;
+        }
+        .aroma-left h3 {
+          font-size: 15px;
+          line-height: 1.12;
+          text-align: right;
+          margin-left: auto;
+          max-width: 58%;
+        }
+        /* Botol diturunkan sedikit (translate 20%) dan panel ditinggikan
+           agar tutup botol tidak mentok ke tepi atas kartu */
+        .aroma-left img {
+          left: 32%;
+          width: 41%;
+          max-width: 80px;
+          transform: translate(-50%, 20%);
+        }
+        .aroma-card:hover .aroma-left img {
+          transform: translate(-50%, 16%);
+        }
+        /* Panel notes: rapat tapi tetap bernapas */
+        .aroma-right {
+          padding: 11px 10px 10px;
+          gap: 8px;
+        }
+        .note-row,
+        .spec-row {
+          grid-template-columns: 1fr;
+          gap: 4px;
+          height: auto;
+        }
+        .note-label {
+          width: max-content;
+          margin-top: 0;
+          font-size: 8px;
+          line-height: 1.15;
+          padding: 2.5px 6px;
+          border-radius: 4px;
+        }
+        /* 4 notes selalu dalam satu baris, lebar sel mengikuti lebar kartu */
+        .note-items {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 3px;
+        }
+        .note-item {
+          width: auto;
+          min-width: 0;
+          font-size: 7.5px;
+          line-height: 1.15;
+        }
+        .note-item img {
+          width: 28px;
+          height: 28px;
+          border-width: 1.5px;
+          margin: 0 0 3px;
+        }
+        /* Spesifikasi: panel 2x2 semi transparan di dasar kartu
+           (label kecil kapital, nilai tebal) — rata bawah agar dua kartu
+           sebaris terlihat seragam */
+        .spec-row {
+          display: block;
+          margin-top: auto;
+          padding: 7px 9px 8px;
+          background: rgba(0, 0, 0, 0.14);
+          border-radius: 10px;
+        }
+        .spec-row .spec-caption {
+          display: none;
+        }
+        .spec-items {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 6px 8px;
+          justify-content: stretch;
+        }
+        .spec {
+          min-width: 0;
+          font-size: 8px;
+          line-height: 1.2;
+          font-weight: 600;
+        }
+        .spec .note-label {
+          display: block;
+          width: auto;
+          background: transparent;
+          color: rgba(255, 255, 255, 0.78);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align: left;
+          font-size: 6.5px;
+          line-height: 1.2;
+          font-weight: 500;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          padding: 0;
+          margin: 0 0 1px;
+          border-radius: 0;
+        }
+      }
+      /* Tablet (600–899px): kartu lebih lebar (±350px), jadi botol dibesarkan
+         (tetap ada ruang di atas tutup), notes dirapatkan dengan lebar sel
+         tetap (bukan mengikuti lebar kartu), dan teks sedikit dibesarkan */
+      @media (min-width: 600px) and (max-width: 899px) {
+        .aroma-card {
+          border-radius: 20px;
+        }
+        .aroma-card .deco {
+          width: 56px;
+          height: 56px;
+          top: -14px;
+          left: -14px;
+        }
+        .aroma-left {
+          min-height: 172px;
+          padding: 16px 18px 0 14px;
+        }
+        .aroma-left h3 {
+          font-size: 18px;
+          max-width: 55%;
+        }
+        .aroma-left img {
+          left: 30%;
+          width: 36%;
+          max-width: 118px;
+          transform: translate(-50%, 18%);
+        }
+        .aroma-card:hover .aroma-left img {
+          transform: translate(-50%, 14%);
+        }
+        .aroma-right {
+          padding: 14px 16px 14px;
+          gap: 10px;
+        }
+        .note-row {
+          gap: 5px;
+        }
+        .note-label {
+          font-size: 9.5px;
+          padding: 3px 7px;
+        }
+        .note-items {
+          grid-template-columns: repeat(4, 58px); /* sel tetap: notes rapat */
+          justify-content: start;
+          gap: 6px;
+        }
+        .note-item {
+          font-size: 9px;
+        }
+        .note-item img {
+          width: 38px;
+          height: 38px;
+          margin-bottom: 4px;
+        }
+        .spec-row {
+          padding: 9px 12px 10px;
+          border-radius: 12px;
+        }
+        .spec-items {
+          gap: 7px 12px;
+        }
+        .spec {
+          font-size: 10px;
+        }
+        .spec .note-label {
+          font-size: 7.5px;
+          margin-bottom: 2px;
+        }
+      }
+      /* HP kecil (<380px): sedikit lebih rapat lagi */
+      @media (max-width: 379px) {
+        .aroma-grid {
+          gap: 10px;
+        }
+        .aroma-left {
+          min-height: 108px;
+        }
+        .aroma-left h3 {
+          font-size: 13px;
+        }
+        .aroma-right {
+          padding: 10px 8px 9px;
+        }
+        .note-item {
+          font-size: 6.7px;
+          letter-spacing: -0.01em;
+        }
+        .note-item img {
+          width: 25px;
+          height: 25px;
+        }
+        .spec-row {
+          padding: 6px 7px 7px;
+        }
+        .spec {
+          font-size: 7.5px;
+        }
+      }
+
+      /* ============================================================
+         SCENES — Kapan & Di Mana EVOMI Paling Cocok Dipakai?
+         ============================================================ */
+      /* Ukuran mengikuti "section 2 - scalev.PNG" (frame 1280px):
+         kartu ±515×290, 2 kolom, jarak antar kartu ±22px */
+      .scenes {
+        padding: 72px 0 104px;
+      }
+      @media (max-width: 899px) {
+        .scenes {
+          padding: 56px 0 72px;
+        }
+      }
+      .scenes .section-title {
+        font-weight: 700;
+        font-size: clamp(1.6rem, 3.37vw, 43.0776px); /* Figma 43.08px / 54px */
+        line-height: 1.25;
+      }
+      .scene-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* mobile: 2 kolom */
+        gap: 14px;
+        margin-top: 32px;
+      }
+      @media (min-width: 900px) {
+        .scene-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 22px 22px;
+          margin-top: 64px;
+        }
+      }
+      .collage {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        aspect-ratio: 1 / 1.08; /* mobile: tiap foto hampir persegi */
+        border-radius: 16px;
+        overflow: hidden;
+        isolation: isolate;
+        background: #e9edf2;
+        box-shadow: 0 10px 28px rgba(15, 40, 80, 0.12);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      @media (min-width: 900px) {
+        .collage {
+          grid-template-rows: 145px 145px;
+          aspect-ratio: auto;
+          border-radius: 18px;
+        }
+      }
+      .collage:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 36px rgba(15, 40, 80, 0.18);
+      }
+      .collage figure {
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .collage figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .collage:hover figure img {
+        transform: scale(1.05);
+      }
+      /* Gelap tipis saja agar foto tetap cerah seperti desain */
+      .collage figure::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.14);
+      }
+      .collage figcaption {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 8px;
+        color: #fff;
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: clamp(10.5px, 2.6vw, 15px);
+        line-height: 1.2;
+        text-align: center;
+        z-index: 2;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+      }
+      /* Mobile: caption tetap di tengah tiap foto, tapi digeser sedikit
+         menjauh dari botol di tengah kartu (padding lebih besar di sisi
+         yang menghadap botol) */
+      @media (max-width: 899px) {
+        .collage figure:nth-child(1) figcaption {
+          padding: 8px 26% 24% 8px;
+        }
+        .collage figure:nth-child(2) figcaption {
+          padding: 8px 8px 24% 26%;
+        }
+        .collage figure:nth-child(3) figcaption {
+          padding: 24% 26% 8px 8px;
+        }
+        .collage figure:nth-child(4) figcaption {
+          padding: 24% 8px 8px 26%;
+        }
+      }
+      @media (min-width: 900px) {
+        .collage figcaption {
+          padding: 0 10px;
+          font-size: 16.0991px; /* Figma */
+          line-height: 1.17;
+        }
+      }
+      .collage .bottle {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 36%; /* mobile: relatif terhadap lebar kartu */
+        max-width: 104px;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.35));
+        transition: transform 0.35s ease;
+      }
+      @media (min-width: 900px) {
+        .collage .bottle {
+          width: 118px;
+          max-width: none;
+        }
+      }
+      .collage:hover .bottle {
+        transform: translate(-50%, -54%);
+      }
+
+      /* ============================================================
+         TESTIMONI — Kata Mereka Tentang Evomi
+         Ukuran mengikuti "section 3 - scalev.PNG" (frame 1280px)
+         ============================================================ */
+      .reviews {
+        --rv-font: var(--font-body);
+        background: #0077cf;
+        color: #fff;
+        border-radius: 32px 32px 0 0;
+        padding: 120px 0 28px; /* bawah rapat: kartu harga menempel ke baris trust */
+        font-family: var(--rv-font);
+      }
+      .reviews h2 {
+        font-family: var(--rv-font);
+        font-weight: 700;
+        color: #fff;
+        font-size: clamp(2rem, 4.3vw, 55.0436px); /* Figma 55.04px / 69px */
+        line-height: 1.25;
+      }
+      .reviews .sub {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.69);
+        font-weight: 500;
+        font-size: clamp(0.95rem, 1.56vw, 20px); /* Figma 20px / 34px */
+        line-height: 1.7;
+        margin-top: 12px;
+      }
+      .review-grid {
+        display: grid;
+        gap: 22px;
+        margin-top: 48px;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* mobile: 2 kolom */
+      }
+      @media (min-width: 640px) {
+        .review-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .review-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .review {
+        font-family: "DM Sans", var(--font-body); /* Figma: DM Sans */
+        background: #fff;
+        color: var(--ink);
+        border-radius: 10px;
+        padding: 12px 12px 12px;
+        display: flex;
+        flex-direction: column;
+        min-height: 307px;
+        box-shadow: 0 6px 18px rgba(0, 40, 90, 0.14);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .review:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 28px rgba(0, 40, 90, 0.24);
+      }
+      .review-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10.0982px; /* Figma */
+        line-height: 14px;
+        font-weight: 500;
+        color: #1e2939;
+      }
+      .review-head .avatar {
+        flex: none;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #e3e5e9;
+        display: grid;
+        place-items: center;
+        color: #a3a8b1;
+      }
+      .review-head .avatar svg {
+        width: 14px;
+        height: 14px;
+      }
+      .review-head .more {
+        margin-left: auto;
+        color: #9ca3af;
+        font-size: 1rem;
+        line-height: 1;
+        letter-spacing: 0;
+        font-weight: 600;
+      }
+      .stars {
+        display: flex;
+        gap: 3px;
+        margin: 9px 0 8px;
+      }
+      .stars svg {
+        width: 15px;
+        height: 15px;
+        fill: #fbbf24;
+      }
+      .review p {
+        font-size: 11.5408px; /* Figma */
+        line-height: 19px;
+        color: #101828;
+      }
+      .review p:has(.k) {
+        line-height: 17px;
+      }
+      .review p .k {
+        color: #99a1af;
+      }
+      .review-photos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: auto;
+        padding-top: 16px;
+      }
+      .review-photos img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        background: #f3f4f6;
+      }
+      .trust {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px 56px;
+        margin-top: 60px;
+        font-weight: 600;
+        font-size: clamp(1rem, 1.38vw, 17.632px); /* Figma 17.63px / 26px */
+        line-height: 1.47;
+      }
+      .trust span {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .trust svg {
+        flex: none;
+        width: 28px;
+        height: 28px;
+      }
+      @media (max-width: 639px) {
+        .reviews {
+          padding: 64px 0 20px;
+          border-radius: 24px 24px 0 0;
+        }
+        .review-grid {
+          margin-top: 32px;
+          gap: 12px;
+        }
+        .review {
+          min-height: 0;
+          padding: 10px;
+        }
+        .review-head {
+          font-size: 9.5px;
+          gap: 6px;
+        }
+        .review-head .avatar {
+          width: 24px;
+          height: 24px;
+        }
+        .review p {
+          font-size: 11px;
+          line-height: 17px;
+        }
+        .review-photos {
+          gap: 8px;
+          padding-top: 12px;
+        }
+        .trust {
+          margin-top: 40px;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+      }
+
+      /* ============================================================
+         CTA — Kartu harga website + tombol Shopee
+         ============================================================ */
+      .offer {
+        background: #0077cf; /* sama dengan section testimoni agar menyatu */
+        color: #fff;
+        padding: max(12px, 2%) 0 44px; /* sedikit jarak (2%) dari baris trust */
+      }
+      @media (max-width: 639px) {
+        .offer {
+          padding: max(12px, 2%) 0 36px;
+        }
+      }
+      /* Dua kartu (website & Shopee) ditumpuk dengan tinggi baris sama,
+         sehingga tombol Shopee selalu setinggi kartu website */
+      .offer .container {
+        display: grid;
+        grid-auto-rows: 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 639px) {
+        .offer .container {
+          gap: 12px;
+        }
+      }
+
+      /* Kartu harga */
+      .price-card {
+        margin-top: 0;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 0 60px rgba(120, 200, 255, 0.45);
+        width: 100%;
+        max-width: 1010px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s ease;
+      }
+      .price-card .body {
+        flex: 1; /* body mengisi sisa tinggi kartu */
+      }
+      .price-card:hover {
+        transform: translateY(-3px);
+      }
+      .price-card .head {
+        background: var(--blue-bright);
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+        font-size: clamp(1.2rem, 2.42vw, 30.9545px); /* Figma 30.95px / 46px */
+        line-height: 1.49;
+        padding: 18px 20px;
+      }
+      .price-card .body {
+        background: var(--cream);
+        color: #0077cf;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0 20px;
+        padding: 26px 20px 30px;
+      }
+      .price-card .body .lbl {
+        font-weight: 700;
+        font-size: clamp(1.5rem, 3.13vw, 40px); /* Figma 40px / 42px */
+        line-height: 1.05;
+      }
+      .price-card .body .big {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(3rem, 8.79vw, 112.562px); /* Figma 112.56px */
+        line-height: 1;
+      }
+      .price-card .body .unit {
+        font-weight: 700;
+        font-size: clamp(1.3rem, 3.13vw, 40px); /* Figma 40px / 42px */
+        line-height: 1.05;
+      }
+      /* Panah di kartu website — menempel di sisi kanan body, seperti tombol Shopee */
+      .price-card--web .body {
+        position: relative;
+        padding-right: 90px;
+        padding-left: 90px; /* seimbang agar teks tetap di tengah */
+      }
+      .price-card--web .arrow {
+        position: absolute;
+        right: 28px;
+        top: 50%;
+        translate: 0 -50%;
+        width: clamp(28px, 3.5vw, 44px);
+        height: auto;
+        transition: transform 0.2s ease;
+      }
+      .price-card--web:hover .arrow {
+        transform: translateX(6px);
+      }
+      @media (max-width: 639px) {
+        .price-card {
+          border-radius: 16px;
+        }
+        .price-card .head {
+          padding: 14px 16px;
+        }
+        .price-card .body {
+          padding: 20px 16px 22px;
+          gap: 0 12px;
+        }
+        /* "Hanya Rp165RB /pcs" tetap satu baris di HP (termasuk 390px) */
+        .price-card--web .body {
+          flex-wrap: nowrap;
+          white-space: nowrap;
+          gap: 0 8px;
+          padding: 18px 40px 20px 14px;
+        }
+        .price-card--web .body .lbl {
+          font-size: 1.2rem;
+        }
+        .price-card--web .body .big {
+          font-size: 2.2rem;
+        }
+        .price-card--web .body .unit {
+          font-size: 1.05rem;
+        }
+        .price-card--web .arrow {
+          right: 10px;
+          width: 24px;
+        }
+      }
+      @media (max-width: 379px) {
+        .price-card--web .body {
+          gap: 0 6px;
+          padding: 16px 36px 18px 12px;
+        }
+        .price-card--web .body .lbl {
+          font-size: 1.05rem;
+        }
+        .price-card--web .body .big {
+          font-size: 1.9rem;
+        }
+        .price-card--web .body .unit {
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Tombol Shopee — struktur sama dengan kartu harga, warna khas Shopee */
+      .price-card--shopee {
+        box-shadow: 0 0 60px rgba(255, 150, 110, 0.35);
+      }
+      /* Header: ukuran & padding sama persis dengan kartu website */
+      .price-card--shopee .head {
+        background: #ee4d2d;
+      }
+      .price-card--shopee .body {
+        background: #fff4ee;
+        color: #ee4d2d;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center; /* isi di tengah, selaras kartu website */
+        gap: clamp(14px, 2.4vw, 28px);
+        padding: 20px 90px; /* kiri-kanan sama; kanan juga ruang panah */
+        text-align: left;
+      }
+      .price-card--shopee .shopee-icon {
+        flex: none;
+        width: clamp(44px, 7.2vw, 92px);
+        height: auto;
+        filter: drop-shadow(0 4px 8px rgba(238, 77, 45, 0.25));
+      }
+      .price-card--shopee .txt {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+      /* Teks utama mendekati besar angka Rp165RB, sub di bawahnya */
+      .price-card--shopee .body .big {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(1.6rem, 5.9vw, 76px);
+        line-height: 1;
+      }
+      .price-card--shopee .body .sub {
+        margin-top: 8px;
+        font-weight: 600;
+        font-size: clamp(0.8rem, 1.72vw, 22px);
+        line-height: 1.3;
+        color: #c23f22;
+      }
+      /* Panah: posisi & ukuran sama dengan panah kartu website */
+      .price-card--shopee .arrow {
+        position: absolute;
+        right: 28px;
+        top: 50%;
+        translate: 0 -50%;
+        width: clamp(28px, 3.5vw, 44px);
+        height: auto;
+        transition: transform 0.2s ease;
+      }
+      .price-card--shopee .body {
+        position: relative;
+      }
+      .price-card--shopee:hover .arrow {
+        transform: translateX(6px);
+      }
+      @media (max-width: 639px) {
+        .price-card--shopee .body {
+          gap: 12px;
+          padding: 14px 40px;
+        }
+        .price-card--shopee .shopee-icon {
+          width: 40px;
+        }
+        .price-card--shopee .body .big {
+          font-size: 1.45rem;
+        }
+        .price-card--shopee .body .sub {
+          margin-top: 3px;
+          font-size: 0.72rem;
+        }
+        .price-card--shopee .arrow {
+          right: 10px;
+          width: 24px;
+        }
+      }
+
+      /* Fokus keyboard */
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid #ffd166;
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main id="top">
+      <!-- =========================== HERO =========================== -->
+      <section class="hero" aria-label="Flash Sale EVOMI">
+        <!-- Stage utama hero -->
+        <div class="hero-stage">
+          <!-- Topbar -->
+          <div class="topbar">
+            <a href="#top" class="logo" aria-label="EVOMI"
+              ><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAiCAYAAACp43wlAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAABQJJREFUeAHtWuF14zYMRvz6v74JjpmgvgmqTHDpBHUniG+CuBNcbgK7EzidQLoJnE4gdQK7E6BEROVgGgBh5875o+892pYEEiABggBkgBFvAkRcxTaDEW+HqIBpbCEpg7CLraL7MOKyiIu+QBs7opvAiEuhKzx/oo9RIZdDV3i+p48rGHERRJfUxq9QILuBET8e6eD2oIYRlwGFuLRLDGUsx2jrwjB2ygpGvA3SLqH84yG2TVLILYx4G8TFD9b1iBEjLJh5SDr1q9joO0Cf3FB7urq62gv0VCzz+MN17N+dSg+6jLPUhiiFZGtinycoIPnvUpHvMR/L2e9IboqmBDqStQFDSIoGaizEzII/nKIPs0Q/c9JPBRmpSPcZ+wNSQxvbHAzE52ssYyn02zr6VYLMElaacLSgNZ6G+2yM2tFnyviVUAty3qGtiKMxUDk80aeQ2rmwOaqsXzHsnXAm8WsLvYvioK1KKf2H2P4S5kQJzYJd/w029oO7S9/7Av0BT+wN4AG+uScPqthqPD+ioYV8z66/d5gaju6gnEW2eOyWHgQ6slav1W8dfDkCo53j69Bi5v7Qt0MIC9andvapMl6a/C9rMkmE9yAXvr4Ih+mjQEeTfBY4WX0DOvId0Rm0zcAfe8Xc58+TPB34ECDJeQY+MjkqOA/T0v1JYrBUCBvhnuZi+Ja23NZ/zvEI3F3dwaHRdFFZN7H9Ftt1vP4DfIq5w/NqRsObvQrOh8Y3DD8mBoO9EjbeKfR8oR9Bx87ol6Nhv3O/faDIKOsa+rPO4k2gRZkXaChcpZTgz+z+PLbf2XWXeF5D+SwceIt4MRLDH+a+ns6GDeoIGX2t0K0yunWJP+rhsThBlM85jscC/7kyjzzU/azQDagyuaz1e/YwtEPU5Ab7MI3eBVPYR5atRRefhLPmq0L7L/jA3VVQaO6lm1GWBcgR4YBfwAZXNHe/+Vp9gdNgucp39DExiIg5KYKsoBKe75NA13EBHoTnDch4Dz5w16PJuMitkD+D9J76DHCFNQpNlxlhKWsnWAoJ9HHKO3VSAE2QlPDsN8kStZJGKgV0jnF/Fu49aeMKWKGQX6Ro7xOch1s2Ds1ZOh+a4UcyCk+gMC09I4V0BtGQENLiv4vtQ1IChaN77M+VW+xLGFs8zqoltxEkQTLk7s6y9ABK0peMohH6dGBjmu08iT+XUXPlOYLx7EUhXw0istQDa8X+gCUF0Et7Olc20LsH2rL/ZP0bYcxZ4Zqw5heGlQ4IoGfiklFYcx5Qsd9SGN+w3x/h9XiJsm6Nk3+e90I7s5Xod1r0gXLm2krSYjlywsRrkfWT6kfBMZ8do8mrD3Vh/AEVowtoY8WFbhUiqbBXK7QtylVZrdSyQVlZYuUT/QW9QZYl9grfWuOjbWAVo1sw2QO7v3L2txR3KBfau8Sr5aWykCVBVH7CWEt8HVo8zpcshdTCXKbO9TiYC5bXofZOtsXe0mhA7R3ABgygv1TeQgHoLwbmIBlmZ4xnZdfzQt/qBNpWYnCOBa6xUBtCn/8nuP4Oc8J4A0RlOBWyNORoC30rRlv6s3WrMaFtWGMZLRbexrExvW6rAiewt7jWMeYKbSsvKWSH8tlYsviD+aDD2Inup5xRCnFvsPe1FF//Ct9yBXpGpQ/7HfAxKGwt0e9PGTMVE9dp0iQnz6476EPwtfTuP0PnkK2C46LlzNEv512ih/8BE7fH6KiboicAAAAASUVORK5CYII="
+                alt="EVOMI"
+                width="100"
+                height="34"
+            /></a>
+            <span class="tagline">Every Version of Me</span>
+          </div>
+
+          <div class="hero-copy">
+            <!-- Hero Title -->
+            <h1 class="flash-title">
+              FLASH SALE
+              <img
+                class="bolt"
+                src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/petir.png"
+                alt=""
+              />
+            </h1>
+
+            <!-- Price Row -->
+            <div class="price-row">
+              <div class="price-box">
+                <div class="old">
+                  <span class="sr-only">Harga normal </span>Rp250.000
+                </div>
+                <div class="now"><small>Rp</small><b>165K</b></div>
+              </div>
+              <div class="save-box">
+                <span>Hemat</span>
+                <b>Rp60K</b>
+              </div>
+            </div>
+
+            <!-- Perks -->
+            <div class="perks">
+              <div class="perk">
+                <img
+                  class="truck"
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/truck.png"
+                  alt=""
+                />
+                <span>Gratis<br />Ongkir</span>
+              </div>
+              <div class="perk">
+                <span class="samples" aria-hidden="true">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/blue-2ml.png"
+                    alt=""
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/green-2ml.png"
+                    alt=""
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/rebel-2ml.png"
+                    alt=""
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/sweet.png"
+                    alt=""
+                  />
+                </span>
+                <span>Free<br />Sampel 2ml</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual -->
+          <div class="hero-visual">
+            <div class="product">
+              <div class="shape shape--rebel" aria-hidden="true">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/rebel.png"
+                  alt=""
+                />
+              </div>
+              <div class="shape shape--sweet" aria-hidden="true">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/love.png"
+                  alt=""
+                />
+              </div>
+              <div class="shape shape--purpose" aria-hidden="true">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/purpose.png"
+                  alt=""
+                />
+              </div>
+              <div class="shape shape--peaceful" aria-hidden="true">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/peaceful.png"
+                  alt=""
+                />
+              </div>
+              <img
+                class="product-img"
+                src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/hero/produk.png"
+                alt="Empat varian EVOMI Eau de Parfum 50 ml: Rebel Brave, Sweet Shy, Purpose Prestige, Peaceful Calm"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Marquee putih di atas biru -->
+        <div class="marquee marquee--light" aria-hidden="true">
+          <div class="marquee-track js-marquee">
+            <span>Every Version of Me</span>
+            <svg viewBox="0 0 34 34">
+              <path
+                d="M17 1l3.6 6.2 7-1.4-1.4 7L32.4 17l-6.2 3.6 1.4 7-7-1.4L17 33l-3.6-6.2-7 1.4 1.4-7L1.6 17l6.2-3.6-1.4-7 7 1.4z"
+                fill="#60bbff"
+              />
+            </svg>
+            <span>Every Version of Me</span>
+            <svg viewBox="0 0 36 32">
+              <path d="M18 2 34 30H2Z" fill="#ff8a84" />
+            </svg>
+            <span>Every Version of Me</span>
+            <svg viewBox="0 0 44 44">
+              <ellipse cx="22" cy="22" rx="21" ry="16" fill="#a5e194" />
+            </svg>
+            <span>Every Version of Me</span>
+            <svg viewBox="0 0 44 40">
+              <path
+                d="M22 38 5 21.5C-1 15 2.5 4 12 4c4.3 0 7.6 2.3 10 5.6C24.4 6.3 27.7 4 32 4c9.5 0 13 11 7 17.5z"
+                fill="#f899c6"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================== FITUR =========================== -->
+      <section class="features" aria-label="Keunggulan EVOMI">
+        <div class="container">
+          <div class="feature-grid">
+            <div class="feature">
+              <img
+                class="feature-icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAA55JREFUeAHVmoF12jAQhg9eBqATVBuEThB3g2wQMkGzQbJBkgmcDZJOYDaATmAzQdng7x0WhTg6IdmyMd97B+/Z0lm/T5LtkyaUGAAz/svYbtgM29yeMkfFtmyV/V+z/WFbTiaTisaIiGJ7YCvQjZItZ5vTGOCGZAlEaRRsCzoHfGGD/oQ1KQcVyhd7ZPuL4cnZDEUyCS1onedUTyAhVGxLtg0dJpStPScTkbF2HenzniejJaWExc0Do1agnmxMpH+ZpBZs7wjjkVLBzu4CLliwZZQA1OP7LeCa3UUGiFulEua4dojQ9iJRd0sfLzQAqLtumVSkvXuaUxmLtxQJ6nEmz01DkZxoj3AX69AnLvotA18nqei7bkWuPO0yoY4eU4qzPkuHv1mkm30vKJX2FSEODHSiu+WRXxcZtQD+7vpwqnKuVHyiDqQUaP1lik/pZTOtkha9kjqSWqD1+YKYYECPXudPl54EzuB+u/oaRejRyykBfQi0fp8U37fNggv0FD3rvy+BWhSLZsHCUWhFiehLoPWtRXHXTac45FCavNJl8KYc33XTKenfYku6AGyiqnKc2g2vKR2yXsesR5vhcvPbcUyyejuB146TG7os1o5jRn6m9Dlf6aswZlztlRn2uyawov4pcBpJYZgAX1vl+LcrqhNATSoaBzITSvt++grJfME3wnVqNqXxk1EHhhLYZUx3mg9EoKv/GkrLPbXr9ltb1ws8H89X1kmzQPTXtg8eI2tuxA9yP3N9yPN4G1DOKMdLEbh2FLimxNiGLqkfDLmvuZEu6nqoj2P5Khzn25j8TMk9iOdokRQ6IzeOY3XgoH/sLugCCGo/3Fmq02m4EQD9Y90cF9ISOKPvpkpw/n+s7x/0H0r9BxoxqLMCxnHq1VW4cNyJ8JT4GYCeADauwloy9Z1GCPSxl/sqFUql1mn7PoA/fW98FX0pcUMjAfoq00tIZW2dvByDSG7Ds6d9p2d9+JeoVjjjowP60p4QPoygd9WzRRL62onwRLFAzxjvRWY0APCv7ArtZ/kTIoXnPqPJvn/Bvz+n+5AJEFki8Ys5wjb5pZsPAkTuheZoGVHEbckskHqyQ/3mELoJb2XF3qKOxswhxtjzz4jbudjf/hwMu42ySYmBJraQ3UepkSEy7PMXhzFToh9kOMh3qqFzgzqiBdJQIGHEgjfEhmDvtmS4Mgrf6FpRnU6Unfcfqdclkwp0YSPRTOvtdv8Oscj6D9n4KiMi/GRYAAAAAElFTkSuQmCC"
+                alt=""
+                decoding="async"
+              />
+              <div><b>EDP Long Lasting</b><span>Wangi tahan 8+ jam</span></div>
+            </div>
+            <div class="feature">
+              <img
+                class="feature-icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAABCCAYAAAD63+5OAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAA1NJREFUeAHtmo2t2jAQxw/UAdigdILyJmg6QTtCOkHfm+DRCUonyNug3SB0AmCCZAPY4HonGykNPtuJ7cRI/CQL5ASf/z5/nI0BMgARV5QqSmccTkPpFXKBKvMTwymWkAcFhJONmBYikIuYF4gg6B1kwGKxaOnjA/f7TjZ//05pBfeKntnGTAjbLDxzRXumorS2vHbRnzcey2LMXL1BX2uwC9lTeqJ0ND0c7BkyugHVnz9S4u8rXYGLTq029pfGwh+P8rgsH2/8oPJ2+jcwGt1yz5RqHAav6BWltVCmz9io+79Hcz22PkJKHBdm9KmulaLPAlUYYoNtPgt1qnGIGFQtV2NcGlSiXNRo8KZLzFJ4mQs6QJwwo8uaUml5zmPjhcbGZ732DOJmAtBCXLMKG+VBfoL/ZxaeDHhS+OT4vYk9pW9jRBhhIWjvy9yPt5ScqzKqcVGjG3FsWMp+M5RT9l/6bTG68xFhMFw6GugrDARvG702GZUY1HIexlGsyLBy2fuF6YFkbAsRcAgqIRYWr+wgIlTeRrDTQCyEFuO86OE3qgnERAGhWFqrhASgWoxNEUUFoaCKuUwk2xShmhn7nCEUNK8Fzmg30GYhNOB7CIDDGZMH9pCWo5D/BAGwmI0hv4WEUMhy3ff0Cera0k7zAneIJOYuT0RYTGvIn0KMyUZQj1gKBWwgIajOEZKIORnyv0BapMY6Qggox2UFJEJY20ZHz92CV4KY8MLN9qQFM2ib0TVQT+UdlLcBa4iBpbWaaEaUnVfBTniQ2TNUC4YOGCHotAiJ55WOMd4JnlN4CO0nl1tIAcrbAcRxpyiuE5oDpATlnWDXSxUKkwMqD/ucS3M5a0iNh6B+pWpUY8v3TLqZRMhIQUM4TCqkI8jntH4IW5gbdJ9KuqhxDm/Y0KL4CNdnbHB38jqXnh1UR1SNQcRsAkb/QUv7eClcb/Uef3JyuaERhYeYXHmIyZWF7SFNsXyrqAD56Kkw5PEsJ81mLaibFi1MCdo3UyE0k69DGOdWhkQJCbCNmZQLX5KybWJ+QRpan9tOY3BNAAXYr5yYrh1yRU/C++yRt7nCHStoDjRLmInHopkrDzG58hDjoIV7BG+Pc+Nd6BnBAgJBdfmtAOWRWRfEf3PbogWf7k+wAAAAAElFTkSuQmCC"
+                alt=""
+                decoding="async"
+              />
+              <div><b>Unisex</b><span>Cocok untuk semua</span></div>
+            </div>
+            <div class="feature">
+              <img
+                class="feature-icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAAA1CAYAAAAeRIaSAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAA2NJREFUeAHlmoFV20AMhpW+DpARbgRGMBM0nYB0AsIENhNAJ3A2CBvkdQLYwGwQNvirezG8kEq6k51iO/neO/KIJcWWTyedbKJMAAQeW4yfhseCHMxyBdnwM39c0TR443E9m81ecoS/5QixAx5oOg6IzHls+LxDjnDSCWyo5I8VTY9Ae0fMU4JmOLSxtaFps+aw+GUJqE5op1JcByRPPvH4TeMihuuDcqxiR9yTB+wzQWOsvnMaIXxelZE1brzGng0HBBoxfH5rwxF5i3vMBL2NDEicpb1uIguUhgMmkyHQNZz5wMJwQEUTI85aHjvleraSQnApTAQ+96V+X/GRSWbYx0i80KDYemvHVAnGsTtOnY/RCTX/s6TL5To6AXTZ3MW9wytdNm/RCb5y8rx44TVh/T3+aRfHUhH8w2NNaW7p3+32K/V38g8eUpPkntKzOJB+Xa88fn76hh3xaKSTZKeGZVaKbkE9YP2NYLPJ1NUqxx20yhF6+ywqmSUz9uWqREUdwb5+kagzdK3yf0GJC2kUxQaJultx4o46Ar3YSd2QEjpVzg9b1WOcXvMOJ11QBxSnNgmdW/RxwIGhK8NQbejNFQc+khPoobDqeN7+Dhn0hS5SGnrSft4dEtBnVVDk/08jCHanZqXoFIp8QQ4gh8KzIptyQKA+wO7UFIJ875CAHgpLRX6ryOup0APsTo34I5BrjiibNSWhh2IQZLulQi9wTjf0DAnlt7aCXAmdik4NEqlTkN/lXIigp63wyyM5qxPmzkbZQL/DkfpItlNIRDuK/XAgM2wnDJmp03DYKmG/EXSeDo6P45kI7M3WTeKCtoZdzXHL9nivsv7kQN7dRT42W9DrjLlis5bsZfwmMMQzEWQ85ICz9IV8l+v2WAmd4Z6JICM+IRcyUrrTQmGBr06FXpB4yIHMkIAcCg2GSoVeYD/kqJXvqyMbYl0BR20yOLA3WxLbA92lU7fBWJ+Ow06dEkWrt3HoNKN1wDvwveYXZ88cPgoaO7ALmmOinCcUpvMCGezUecwuU66iqQG73+dlum/Qwb/qSzQY6Yti2cCfOo8dEOgcgN2n1DhNf3AswN5saZyuPzgW4MsYFZ0rsNti5++Ad2D3Kaf+Mnk+kPuUDaaeCr3gc+qMDgh0iWCfNQINzF+O4qsrry/7TQAAAABJRU5ErkJggg=="
+                alt=""
+                decoding="async"
+              />
+              <div><b>Aroma Premium</b><span>Bahan berkualitas</span></div>
+            </div>
+            <div class="feature">
+              <img
+                class="feature-icon"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAA6CAYAAADhu0ooAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAtNJREFUeAHdmuGRmzAQhdepgBLoIFcCJaSDUII7MB1cOtB1cOlAJTgdqAQnFbxIJ5hjGB+7K2GQ/M3wT1r0eKBdSRDtAIDGXxd/OURu/rL+6ulZ8GLamcB7XOgZYEROnKlmwqsJGeFVbqhWhG5ODFQjfuAddNyoRhBnVS091YQf8AvSsFQTfsAG6XRUA4h5c40bnsFVgZuvArEdlYzATYxtBtTsqsBNM7ZrqnUVfE374easPeeqoRLxAztrBi50tbyyUOPmrA/n6kAlAb54t1/0a5h+ZRT740DPAje7lRhvTN93HDUx4XPHgPvGAlcmlrT4t9irFlYKnOgFca0insOjBCOmDqMU+DEoYXztkm5bweMALNLpFfeySMMhvmUtadlAYGBQ3lNScHAYSAT7Rj+QL9CFOJQA4hzAzcISDO4JRnyaFnlYbJQG8Fn4O+RxWT5Fh3QsHpjnEIsRh3QuUyCuRv2KXRN5puAmBLgqOoT08gspM9y2gi10nEnROHwzxawmEDPDu3Ds5pvv81cY+6e/kmbTrUF8o8J4OmGXfymJ2iE1QWeC9Pzep5ZfE2YPwcgrYNw8ELcAPkQw8guYMHm+LINK1pUSwR1lAPkal8NiKXJxo9wEHQizYUtKEB3UrpCWWGgeNvIFOyjS0SgyB4OctwlpCXpiUNzHQU9wP8wvLW0F4sz3Bh2izS3IT8aXAh9XwCCuLDSCB0FMJ4z1eIF3BicVvOoqZG6GerynI4FsLTus9HdM33L+WAFfXd0S+4k213ZF4Gq/RZ/DEbhjF+25/xzKc3NC4FA3a2tQm5sTEB42gT8ZdzhwF0MEBCfZAjdfqXTAL/kke1QtlQ5kJ9lrlHmkfw/kLeRbqoUMV+txcyLR1ZZqA/z/CUvq+uFxDnTLuY5qBfKt1CvVDvhvNUxaLT0DK2Id1rYkN+REOzG6Fs5uvlM4CyH646/fp9NJevaTxX/wgF5alzjjagAAAABJRU5ErkJggg=="
+                alt=""
+                decoding="async"
+              />
+              <div><b>4 Versi Aroma</b><span>Karakter berbeda</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================== AROMA =========================== -->
+      <section class="aroma" id="aroma">
+        <div class="container">
+          <h2 class="section-title">Celebration for Every Version of You</h2>
+
+          <div class="aroma-grid">
+            <!-- Purpose Prestige -->
+            <article class="aroma-card aroma-card--blue">
+              <svg class="deco" viewBox="0 0 34 34" aria-hidden="true">
+                <path
+                  d="M17 1l3.6 6.2 7-1.4-1.4 7L32.4 17l-6.2 3.6 1.4 7-7-1.4L17 33l-3.6-6.2-7 1.4 1.4-7L1.6 17l6.2-3.6-1.4-7 7 1.4z"
+                />
+              </svg>
+              <div class="aroma-left">
+                <h3>Purpose<br />Prestige</h3>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/purpose.webp"
+                  alt="EVOMI Purpose Prestige Eau de Parfum 50 ml"
+                  loading="lazy"
+                />
+              </div>
+              <div class="aroma-right">
+                <div class="note-row">
+                  <span class="note-label">Top Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/plum.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Plum
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/grapefruit.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Grapefruit
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/bergamot.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Bergamot
+                    </div>
+                  </div>
+                </div>
+                <div class="note-row">
+                  <span class="note-label">Middle Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/hazelnut.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Hazelnut
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/honey.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Honey
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/milk.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Milk
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/amberwood.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Amberwood
+                    </div>
+                  </div>
+                </div>
+                <div class="note-row">
+                  <span class="note-label">Base Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/cedarwood.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Cedarwood
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/casmerwood.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Cashmere Wood
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/vetiver.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Vetiver
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/marine.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Marine
+                    </div>
+                  </div>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-caption"
+                    >Sillage, Projection, dan Longevity</span
+                  >
+                  <div class="spec-items">
+                    <div class="spec">
+                      <span class="note-label">Olfactory Family</span>
+                      <div>Woody</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Sillage</span>
+                      <div>Moderate</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Projection</span>
+                      <div>1–2 Meters</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Longevity</span>
+                      <div>8+ hrs</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Peaceful Calm -->
+            <article class="aroma-card aroma-card--green">
+              <svg class="deco" viewBox="0 0 72 72" aria-hidden="true">
+                <circle cx="36" cy="36" r="34" />
+              </svg>
+              <div class="aroma-left">
+                <h3>Peaceful<br />Calm</h3>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/peaceful.webp"
+                  alt="EVOMI Peaceful Calm Eau de Parfum 50 ml"
+                  loading="lazy"
+                />
+              </div>
+              <div class="aroma-right">
+                <div class="note-row">
+                  <span class="note-label">Top Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/bergamot.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Bergamot
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/peach.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Peach
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/pomelo.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Pomelo
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/bamboo.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Bamboo
+                    </div>
+                  </div>
+                </div>
+                <div class="note-row">
+                  <span class="note-label">Middle Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/peony.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Peony
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/rose.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Rose
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/narcisus.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Narcissus
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/jasmine.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Jasmine
+                    </div>
+                  </div>
+                </div>
+                <div class="note-row">
+                  <span class="note-label">Base Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/ylang-ylang.jpg"
+                        alt=""
+                        loading="lazy"
+                      /><span style="white-space: nowrap">Ylang-Ylang</span>
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/vanilla.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Vanilla
+                    </div>
+                  </div>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-caption"
+                    >Sillage, Projection, dan Longevity</span
+                  >
+                  <div class="spec-items">
+                    <div class="spec">
+                      <span class="note-label">Olfactory Family</span>
+                      <div>Musk, Woody, Floral</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Sillage</span>
+                      <div>Moderate</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Projection</span>
+                      <div>2 Meters</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Longevity</span>
+                      <div>8+ hrs</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Rebel Brave -->
+            <article class="aroma-card aroma-card--red">
+              <svg class="deco" viewBox="0 0 72 72" aria-hidden="true">
+                <path d="M36 4 72 68H0z" />
+              </svg>
+              <div class="aroma-left">
+                <h3>Rebel<br />Brave</h3>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/rebel.webp"
+                  alt="EVOMI Rebel Brave Eau de Parfum 50 ml"
+                  loading="lazy"
+                />
+              </div>
+              <div class="aroma-right">
+                <div class="note-row">
+                  <span class="note-label">Top Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/bergamot.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Bergamot
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/lavender.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Lavender
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/cinnamon.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Cinnamon
+                    </div>
+                  </div>
+                </div>
+                <div class="note-row">
+                  <span class="note-label">Middle Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/orange-blossom.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Orange Blossom
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/lily-of-the-valley.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Lily of the Valley
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/vanilla.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Vanilla
+                    </div>
+                  </div>
+                </div>
+                <div class="note-row">
+                  <span class="note-label">Base Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/vanilla.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Vanilla
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/tonka-bean.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Tonka Bean
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/amber.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Amber
+                    </div>
+                  </div>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-caption"
+                    >Sillage, Projection, dan Longevity</span
+                  >
+                  <div class="spec-items">
+                    <div class="spec">
+                      <span class="note-label">Olfactory Family</span>
+                      <div>Oriental Vanilla</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Sillage</span>
+                      <div>Strong</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Projection</span>
+                      <div>1–2 Meters</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Longevity</span>
+                      <div>8+ hrs</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Sweet Shy -->
+            <article class="aroma-card aroma-card--pink">
+              <svg class="deco" viewBox="0 0 72 72" aria-hidden="true">
+                <path
+                  d="M36 68 10 42C0 32 6 14 20 14c7 0 12 4 16 9 4-5 9-9 16-9 14 0 20 18 10 28z"
+                />
+              </svg>
+              <div class="aroma-left">
+                <h3>Sweet<br />Shy</h3>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/sweet.webp"
+                  alt="EVOMI Sweet Shy Eau de Parfum 50 ml"
+                  loading="lazy"
+                />
+              </div>
+              <div class="aroma-right">
+                <div class="note-row">
+                  <span class="note-label">Top Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/pineapple.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Pineapple
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/mandarin.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Mandarin
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/apricot.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Apricot
+                    </div>
+                  </div>
+                </div>
+                <div class="note-row">
+                  <span class="note-label">Middle Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/melon.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Melon
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/lily-of-the-valley.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Lily of the Valley
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/jasmine.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Jasmine
+                    </div>
+                  </div>
+                </div>
+                <div class="note-row">
+                  <span class="note-label">Base Notes</span>
+                  <div class="note-items">
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/musk.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Musk
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/ambergis.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Ambergris
+                    </div>
+                    <div class="note-item">
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/jasmine.jpg"
+                        alt=""
+                        loading="lazy"
+                      />Jasmine
+                    </div>
+                  </div>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-caption"
+                    >Sillage, Projection, dan Longevity</span
+                  >
+                  <div class="spec-items">
+                    <div class="spec">
+                      <span class="note-label">Olfactory Family</span>
+                      <div>Floral Fruity</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Sillage</span>
+                      <div>Moderate</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Projection</span>
+                      <div>2 Meters</div>
+                    </div>
+                    <div class="spec">
+                      <span class="note-label">Longevity</span>
+                      <div>6 hrs</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Marquee abu-abu -->
+      <div class="marquee marquee--grey" aria-hidden="true">
+        <div class="marquee-track js-marquee">
+          <span>Every Version of Me</span>
+          <svg viewBox="0 0 34 34">
+            <path
+              d="M17 1l3.6 6.2 7-1.4-1.4 7L32.4 17l-6.2 3.6 1.4 7-7-1.4L17 33l-3.6-6.2-7 1.4 1.4-7L1.6 17l6.2-3.6-1.4-7 7 1.4z"
+              fill="#3aa0ff"
+            />
+          </svg>
+          <span>Every Version of Me</span>
+          <svg viewBox="0 0 36 32">
+            <path d="M18 2 34 30H2Z" fill="#f05a4a" />
+          </svg>
+          <span>Every Version of Me</span>
+          <svg viewBox="0 0 44 44">
+            <circle cx="22" cy="22" r="20" fill="#7ad26a" />
+          </svg>
+          <span>Every Version of Me</span>
+          <svg viewBox="0 0 44 40">
+            <path
+              d="M22 38 5 21.5C-1 15 2.5 4 12 4c4.3 0 7.6 2.3 10 5.6C24.4 6.3 27.7 4 32 4c9.5 0 13 11 7 17.5z"
+              fill="#ff8fcf"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- =========================== SCENES =========================== -->
+      <section class="scenes" id="kapan">
+        <div class="container">
+          <h2 class="section-title">
+            Kapan &amp; Di Mana EVOMI Paling Cocok Dipakai?
+          </h2>
+
+          <div class="scene-grid">
+            <!-- Purpose Prestige -->
+            <div class="collage">
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/evening.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Evening</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/formal.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Formal</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/office.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Office</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/dinner-at-night.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Dinner at Night</figcaption>
+              </figure>
+              <img
+                class="bottle"
+                src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/purpose.webp"
+                alt="Purpose Prestige cocok untuk evening, formal, office, dan dinner at night"
+                loading="lazy"
+              />
+            </div>
+            <!-- Peaceful Calm -->
+            <div class="collage">
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/day-time.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Daytime</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/hot-days.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Hot Days</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/sport.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Sport</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/daily.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Daily</figcaption>
+              </figure>
+              <img
+                class="bottle"
+                src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/peaceful.webp"
+                alt="Peaceful Calm cocok untuk daytime, hot days, sport, dan daily"
+                loading="lazy"
+              />
+            </div>
+            <!-- Rebel Brave -->
+            <div class="collage">
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/night.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Night</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/social-scene.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Social Scenes</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/dates.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Dates</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/rainy.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Rainy</figcaption>
+              </figure>
+              <img
+                class="bottle"
+                src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/rebel.webp"
+                alt="Rebel Brave cocok untuk night, social scenes, dates, dan rainy"
+                loading="lazy"
+              />
+            </div>
+            <!-- Sweet Shy -->
+            <div class="collage">
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/day-time.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Daytime</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/casual.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Casual</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/daily-wear.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>Daily Wear</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/scenes/school.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>School</figcaption>
+              </figure>
+              <img
+                class="bottle"
+                src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/notes/sweet.webp"
+                alt="Sweet Shy cocok untuk daytime, casual, daily wear, dan school"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================== TESTIMONI =========================== -->
+      <section class="reviews" id="testimoni">
+        <div class="container">
+          <h2 class="section-title">Kata Mereka Tentang Evomi</h2>
+          <p class="sub">
+            Ulasan nyata dari pelanggan yang sudah menemukan aroma favoritnya
+          </p>
+
+          <div class="review-grid">
+            <article class="review">
+              <div class="review-head">
+                <span class="avatar" aria-hidden="true"
+                  ><svg viewBox="0 0 16 16" fill="currentColor">
+                    <circle cx="8" cy="5" r="3" />
+                    <path d="M2 14c0-3.3 2.7-5 6-5s6 1.7 6 5z" /></svg
+                ></span>
+                <span>j**********3</span><span class="more">···</span>
+              </div>
+              <div class="stars" role="img" aria-label="5 dari 5 bintang">
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  />
+                </svg>
+              </div>
+              <p>
+                <span class="k">Tekstur:</span> bagus<br />
+                <span class="k">Ketahanan:</span> untuk ketahanan bisah sampai 2
+                hari wangi parfumnya masi membekas<br />
+                <span class="k">Cocok Untuk:</span> cocok buat yang sering
+                beraktivitas di luar dan aromanya seger
+              </p>
+              <div class="review-photos">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/reviews/purpose-1-j-3.jpg"
+                  alt="Foto ulasan Purpose Prestige"
+                  loading="lazy"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/reviews/purpose-2-j-3.jpg"
+                  alt="Foto ulasan Purpose Prestige"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <article class="review">
+              <div class="review-head">
+                <span class="avatar" aria-hidden="true"
+                  ><svg viewBox="0 0 16 16" fill="currentColor">
+                    <circle cx="8" cy="5" r="3" />
+                    <path d="M2 14c0-3.3 2.7-5 6-5s6 1.7 6 5z" /></svg
+                ></span>
+                <span>n********0</span><span class="more">···</span>
+              </div>
+              <div class="stars" role="img" aria-label="5 dari 5 bintang">
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  />
+                </svg>
+              </div>
+              <p>
+                pas pertama kali di spray dia ada hint fresh, tapi pas dry down
+                dia woody!! suka bangettt karena wangi nya ga pasaran &amp;
+                konsep parfume nya juga lucu, keep up the good works evomi team
+                🤍
+              </p>
+              <div class="review-photos">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/reviews/peaceful-1-1-n-o.jpg"
+                  alt="Foto ulasan Peaceful Calm"
+                  loading="lazy"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/reviews/peaceful-2-2-n-o.jpg"
+                  alt="Foto ulasan Peaceful Calm"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <article class="review">
+              <div class="review-head">
+                <span class="avatar" aria-hidden="true"
+                  ><svg viewBox="0 0 16 16" fill="currentColor">
+                    <circle cx="8" cy="5" r="3" />
+                    <path d="M2 14c0-3.3 2.7-5 6-5s6 1.7 6 5z" /></svg
+                ></span>
+                <span>h********a</span><span class="more">···</span>
+              </div>
+              <div class="stars" role="img" aria-label="5 dari 5 bintang">
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  />
+                </svg>
+              </div>
+              <p>
+                parfume mini yg packagingnya super lucuuu, duh sukaaa bgt sm
+                wanginya awet!💮💗 bakal repurchase sih hihi thankyou seller
+                &lt;3
+              </p>
+              <div class="review-photos">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/reviews/sweet-1-h-a.jpg"
+                  alt="Foto ulasan Sweet Shy"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <article class="review">
+              <div class="review-head">
+                <span class="avatar" aria-hidden="true"
+                  ><svg viewBox="0 0 16 16" fill="currentColor">
+                    <circle cx="8" cy="5" r="3" />
+                    <path d="M2 14c0-3.3 2.7-5 6-5s6 1.7 6 5z" /></svg
+                ></span>
+                <span>U**r</span><span class="more">···</span>
+              </div>
+              <div class="stars" role="img" aria-label="5 dari 5 bintang">
+                <svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  /></svg
+                ><svg viewBox="0 0 20 20">
+                  <path
+                    d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"
+                  />
+                </svg>
+              </div>
+              <p>wanginya mahal, tahan lama, gw pake main ama nongkrong</p>
+              <div class="review-photos">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/reviews/rebel-1-1-u-r.jpg"
+                  alt="Foto ulasan Rebel Brave"
+                  loading="lazy"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/ramadhan42/parfum-rama-assets@main/assets/reviews/rebel-1-2-u-r.jpg"
+                  alt="Foto ulasan Rebel Brave"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+          </div>
+
+          <div class="trust">
+            <span>
+              <svg viewBox="0 0 26 26">
+                <circle cx="13" cy="13" r="13" fill="#fff" />
+                <path
+                  d="M8 13.8c1.4 1.2 2.4 2.5 3.2 4 1.8-4 4.2-7.2 7-9.6"
+                  fill="none"
+                  stroke="#0077cf"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Produk original
+            </span>
+            <span>
+              <svg viewBox="0 0 26 26">
+                <circle cx="13" cy="13" r="13" fill="#fff" />
+                <path
+                  d="M8 13.8c1.4 1.2 2.4 2.5 3.2 4 1.8-4 4.2-7.2 7-9.6"
+                  fill="none"
+                  stroke="#0077cf"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Ulasan terverifikasi
+            </span>
+            <span>
+              <svg viewBox="0 0 26 26">
+                <circle cx="13" cy="13" r="13" fill="#fff" />
+                <path
+                  d="M8 13.8c1.4 1.2 2.4 2.5 3.2 4 1.8-4 4.2-7.2 7-9.6"
+                  fill="none"
+                  stroke="#0077cf"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              98% pembeli merekomendasikan
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================== CTA BELI =========================== -->
+      <section class="offer" id="beli" aria-label="Beli EVOMI">
+        <div class="container">
+          <!-- Kartu harga: tautan CTA ke halaman checkout Scalev -->
+          <a
+            href="https://evomi-parfum.myscalev.com/checkout-flow-baru"
+            class="price-card price-card--web js-cta"
+            data-cta="harga-website"
+            id="checkout"
+          >
+            <div class="head">Lebih Murah Beli di Website</div>
+            <div class="body">
+              <span class="lbl">Hanya</span>
+              <span class="big">Rp165RB</span>
+              <span class="unit">/pcs</span>
+              <svg
+                class="arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </div>
+          </a>
+
+          <!-- Tombol Shopee: alternatif beli di marketplace -->
+          <a
+            href="https://shopee.co.id/evomiindonesia#product_list"
+            class="price-card price-card--shopee js-cta"
+            data-cta="beli-shopee"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="head">Atau Beli di Shopee</div>
+            <div class="body">
+              <svg class="shopee-icon" viewBox="0 0 64 64" aria-hidden="true">
+                <path
+                  d="M13 21h38l3.2 34.4A4 4 0 0 1 50.2 60H13.8a4 4 0 0 1-4-4.6z"
+                  fill="#ee4d2d"
+                />
+                <path
+                  d="M22 23v-5a10 10 0 0 1 20 0v5"
+                  fill="none"
+                  stroke="#ee4d2d"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M39 33.5c-1.6-2.1-4.2-3.3-7-3.3-3.9 0-6.6 2.1-6.6 4.9 0 2.8 2.7 3.9 6.5 5s7.1 2.3 7.1 5.6c0 3.3-3.2 5.5-7.2 5.5-3.3 0-6-1.3-7.6-3.5"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="3.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <span class="txt">
+                <span class="big">Beli di Shopee</span>
+                <span class="sub">Toko resmi EVOMI Indonesia</span>
+              </span>
+              <svg
+                class="arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================== SCRIPT =========================== -->
+    <script>
+      (function () {
+        // Marquee mulus: track = 2 bagian identik, tiap bagian minimal selebar
+        // layar, lalu digeser -50% (tepat satu bagian) agar loop tanpa patahan.
+        var tracks = document.querySelectorAll(".js-marquee");
+        var SECONDS_PER_COPY = 14; // kecepatan tetap, berapa pun jumlah salinan
+        var marqueeVW = 0;
+        for (var t = 0; t < tracks.length; t++) {
+          tracks[t].setAttribute("data-src", tracks[t].innerHTML);
+        }
+        function buildMarquees() {
+          var vw = Math.max(
+            document.documentElement.clientWidth,
+            window.innerWidth || 0,
+          );
+          if (vw === marqueeVW) return;
+          marqueeVW = vw;
+          for (var i = 0; i < tracks.length; i++) {
+            var tr = tracks[i];
+            var src = tr.getAttribute("data-src");
+            tr.innerHTML = src;
+            var w = tr.getBoundingClientRect().width || 1;
+            var copies = Math.max(1, Math.ceil(vw / w));
+            var half = "";
+            for (var c = 0; c < copies; c++) half += src;
+            tr.innerHTML = half + half;
+            tr.style.animationDuration = copies * SECONDS_PER_COPY + "s";
+          }
+        }
+        buildMarquees();
+        var marqueeTimer;
+        window.addEventListener("resize", function () {
+          clearTimeout(marqueeTimer);
+          marqueeTimer = setTimeout(buildMarquees, 150);
+        });
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(function () {
+            marqueeVW = 0;
+            buildMarquees();
+          });
+        }
+
+        // Helper analytics yang defensif: tidak mengganggu halaman jika Scalev belum siap
+        function track(eventName, payload) {
+          try {
+            var S = window.Scalev;
+            if (!S || !S.analytics || typeof S.analytics.track !== "function")
+              return;
+            var data = Object.assign({ event: eventName }, payload || {});
+            ["facebook", "tiktok", "kwai"].forEach(function (provider) {
+              try {
+                S.analytics.track(provider, data);
+              } catch (e) {
+                /* abaikan */
+              }
+            });
+          } catch (e) {
+            /* abaikan */
+          }
+        }
+
+        function init() {
+          var scalevData = { page: {}, store: null };
+          try {
+            if (
+              window.Scalev &&
+              window.Scalev.data &&
+              typeof window.Scalev.data.get === "function"
+            ) {
+              scalevData = window.Scalev.data.get() || scalevData;
+            }
+          } catch (e) {
+            /* tetap pakai fallback */
+          }
+          var page = scalevData.page || {};
+
+          track("ViewContent", {
+            content_name: "evomi-flash-sale",
+            page_id: page.id || null,
+          });
+
+          // Lacak klik CTA
+          var ctas = document.querySelectorAll(".js-cta");
+          for (var i = 0; i < ctas.length; i++) {
+            ctas[i].addEventListener("click", function (ev) {
+              track("CTAClick", {
+                cta: ev.currentTarget.getAttribute("data-cta") || "cta",
+              });
+            });
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+      })();
+    </script>
+  </body>
+</html>
